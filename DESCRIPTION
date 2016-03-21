@@ -1,0 +1,10 @@
+Package: textFlow
+Type: Package
+Title: A text command
+Version: 0.1
+Date: 2016-03-21
+Author: Matt Arnold
+Maintainer: <arnhew99.github@outlook.com>
+Description: A text command that supports reflowing text and some basic markup.
+License: GPL-3
+ByteCompile: yes
