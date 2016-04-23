@@ -120,7 +120,8 @@ findMark <- function(string, mark) {
 	if (string == "") return(list(mark=FALSE, string=""))
 	split_string <- strsplit(string, mark, fixed=TRUE)[[1]]
 	if (length(split_string) > 1) {
-		return(list(mark=TRUE, string=split_string[min(which(split_string != ""))], mark.count=sum(split_string=="")))
+		newstr <- paste0(split_string[which(split_string != "")], collapse="")
+		return(list(mark=TRUE, string=newstr, mark.count=sum(split_string=="")))
 	}
 	else if (split_string[1] == "") return(list(mark=TRUE, string=split_string[1], mark.count=1)) 
 	else return(list(mark=FALSE, string=string[1], mark.count=0))
