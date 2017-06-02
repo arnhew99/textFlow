@@ -23,6 +23,12 @@ textFlow <- function(x, y, labels, adj=c(0,1), cex=1, available_width=NULL, igno
 	if (length(adj) == 1) vadj <- 1  # by default hang the text block off a line
 	else if (length(adj) == 2) vadj <- adj[2]
 	if (!(vadj %in% c(0,0.5,1))) stop("second element of adj not 0, 0.5 or 1")
+	
+	# check to see whether we were actually given anything to write
+	if (length(labels)==0) {
+		warning("Supplied labels argument appears to be of length zero. It was changed to an empty string.")
+		labels <- ""
+	}
 
 	lims <- list(xlim=par("usr")[1:2], ylim=par("usr")[3:4])
 	
