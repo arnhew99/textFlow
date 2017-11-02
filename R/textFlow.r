@@ -26,8 +26,7 @@ textFlow <- function(x, y, labels, adj=c(0,1), cex=1, available_width=NULL, igno
 	
 	# check to see whether we were actually given anything to write
 	if (length(labels)==0) {
-		warning("Supplied labels argument appears to be of length zero. It was changed to an empty string.")
-		labels <- ""
+		return(NULL)
 	}
 
 	lims <- list(xlim=par("usr")[1:2], ylim=par("usr")[3:4])
